@@ -1,0 +1,72 @@
+<html>
+<head><title>log in</title></head>
+<body>
+
+
+    <%= form_for @user do |f|%>
+
+    <table align="right" width="400px">
+
+        <tr><td colspan="2" align="center">
+
+           
+        </td></tr>
+    	<tr><td colspan="2" align="center"><h3>SIGN UP</h3></td></tr>
+    	<tr>
+    		<td>
+				<%= f.label :name %>
+			</td>
+			<td>
+				<%= f.text_field :name %>
+
+			</td>
+		</tr>
+
+		<tr>
+    		<td>
+				<%= f.label :age %>
+			</td>
+			<td>
+				<%= f.text_field :age %>
+			</td>
+		</tr>
+    <%= fields_for @login do |login_details_form| %>
+		<tr>
+    		<td>
+				<%= login_details_form.label :user_name %>
+
+			</td>
+			<td>
+				<%= login_details_form.text_field :user_name %>
+			</td>
+		</tr>
+
+		<tr>
+    		<td>
+				<%= login_details_form.label :password %>
+			</td>
+			<td>
+				<%= login_details_form.text_field :password %>
+			</td>
+		</tr>
+    <%end%>
+        <tr>
+            <td colspan="2" style="color:red; font-size:12px;">
+                    
+            </td>
+        </tr>
+		<tr>
+			<td colspan="2" align="center" style="color:red; font-size:15px;">
+				<%= f.submit "SIGN UP"%><br />
+			</td>
+		</tr>
+
+	
+				<%#= f.label :password_confirm %>
+				<%#= f.text_field :password_confirm %>
+	</table>
+
+	<% end %>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+  <body style = "margin:0; font-size:17px;">
+  	<div style="width:100%; height:130px;  background:#C2C2C2;;margin:0;">
+	    <div style="width:1000px; margin:0 auto; height:100px;">
+	      <div style="width:300px; float:left;">
+	        <%= image_tag("admin.gif", :alt => "test image" ,:style =>"width:200px;") %>
+	      </div>
+	      <div style="width:300px; float:right; padding-top:40px;margin:0;" align="left">
+	           <div style="width:100px;float:left; line-height:20px;">NAME:<br />AGE:</div>
+	           <div style="width:100px;float:left; line-height:20px;"><%= @admin_details[:name] %><br />
+	           <%= @admin_details[:age]%></div>
+	    </div>
+    </div>	
+	<div style="width:1000px; margin:0 auto; overflow:hidden;">
+		  <div style="width:900px; margin:2px auto; overflow:hidden;  background:#C2C2C2;" align="center">
+		  		<strong>USERS</strong>
+		  </div>
+
+		<% @user.each do |data| %>
+		  <div style="width:900px; margin:2px auto; overflow:hidden; background:#C2C2C2;">
+			  <div style="float:left"><%= image_tag("", :alt => "test image" ,:style =>"width:50px;height:50px;") %>	
+			  </div>
+		      <div style="width:300px; float:left; padding-top:40px;margin:0;" align="left">
+			  	   <div style="width:100px;float:left; line-height:30px;">NAME:<br />AGE:</div>
+		           <div style="width:100px;float:left; line-height:30px;"><%= data.name %><br /><%= data.age %></div>
+			  </div>
+
+
+			  <div style="float:right; padding-top:50px;padding-right:30px;">
+				<%= link_to "SHOW",admin_path(data) %>&nbsp&nbsp
+			  	<%= link_to "EDIT",new_user_path%>&nbsp&nbsp
+				<%= link_to "DELETE",data, :confirm => "are you sure", :method => :delete %>
+			  </div>
+
+		  </div>	
+		<% end %>
+	</div>
+  	<div style="width:100%; height:50px;  background:#C2C2C2;;margin:0;">
+    </div>	
+</body>
+</html>
